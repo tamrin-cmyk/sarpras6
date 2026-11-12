@@ -9,7 +9,6 @@
     <style>
         .login-container { display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, var(--soft-blue), var(--mint-green)); }
         .login-card { width: 400px; text-align: center; }
-        .login-card img { width: 150px; margin-bottom: 20px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); }
     </style>
 </head>
 <body>
@@ -27,20 +26,18 @@
         </div>
     </div>
 
-    <!-- Firebase SDK Modular CDN -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-        // GANTI DENGAN CONFIG FIREBASE ANDA (Langkah 3 di panduan)
         const firebaseConfig = {
             apiKey: "AIzaSyDlPyiIPG61p7kywbBI4ZbBAJtssdcmWbA",
-  	    authDomain: "simantap-sarpas.firebaseapp.com",
-  	    projectId: "simantap-sarpas",
-  	    storageBucket: "simantap-sarpas.firebasestorage.app",
-  	    messagingSenderId: "699021070714",
-  	    appId: "1:699021070714:web:2fc1aba7776154f6c0c6c3",
-  	    measurementId: "G-CG4Q5CJGRQ"
+            authDomain: "simantap-sarpas.firebaseapp.com",
+            projectId: "simantap-sarpas",
+            storageBucket: "simantap-sarpas.firebasestorage.app",
+            messagingSenderId: "699021070714",
+            appId: "1:699021070714:web:2fc1aba7776154f6c0c6c3",
+            measurementId: "G-CG4Q5CJGRQ"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -52,12 +49,13 @@
             const pass = document.getElementById('password').value;
             
             signInWithEmailAndPassword(auth, email, pass)
-                .then((userCredential) => {
-                    window.location.href = "index.html"; // Berhasil login
+                .then(() => {
+                    window.location.href = "index.html";
                 })
-                .catch((error) => {
-                    document.getElementById('errorMsg').innerText = "Gagal login: Periksa email & password!";
-                    document.getElementById('errorMsg').style.display = "block";
+                .catch(() => {
+                    const err = document.getElementById('errorMsg');
+                    err.innerText = "Gagal login: Periksa email & password!";
+                    err.style.display = "block";
                 });
         });
     </script>
