@@ -77,10 +77,7 @@ th { background: var(--soft-blue); color: var(--text-main); border-radius: 10px 
   #print-area { display: block; position: absolute; left: 0; top: 0; width: 100%; background: white; padding: 20px; }
   .sidebar, .header, .btn-3d { display: none !important; }
   
-  /* Stiker Label Barcode */
   .label-cetak { border: 2px solid #000; padding: 15px; width: 6cm; text-align: center; border-radius: 8px; margin-bottom: 10px; page-break-inside: avoid; }
-  
-  /* Kartu Peminjaman */
   .kartu-cetak { border: 2px solid #000; padding: 20px; width: 100%; max-width: 800px; }
   .kartu-cetak table { border: 1px solid #000; }
   .kartu-cetak th, .kartu-cetak td { border: 1px solid #000; padding: 8px; }
